@@ -15,7 +15,18 @@ public class Driver
 	    {
 	    	convertedNum += array[decimalNumber % radix];
 	    	decimalNumber = decimalNumber / radix;
-	    } while (radix > 0);
-	    return convertedNum;
+	    } while (decimalNumber > 0);
+	    return Driver.reverseString(convertedNum);
+	}
+	
+
+	static String reverseString(String s)
+	{
+		String answer = "";
+		for(int i = s.length()-1; i >= 0; i = i - 1)
+		{
+			answer = answer + s.charAt(i);
+		}
+		return answer;
 	}
 }
